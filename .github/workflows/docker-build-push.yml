@@ -31,11 +31,4 @@ jobs:
           repository: akshaya09082000/demo-github
           tag_with_ref: true
           
-      -
-        name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          tags: user/app:latest
-          secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.GHCR_PAT }}
+
