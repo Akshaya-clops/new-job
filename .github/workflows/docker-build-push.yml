@@ -30,3 +30,9 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
           repository: akshaya09082000/demo-github
           tag_with_ref: true
+          
+      - name: Build the image and push
+        run: docker build . --file Dockerfile --tag my-image:$(date +%s)
+        
+      - name: docker push
+        run: docker push akshaya09082000/demo-github:my-image
