@@ -21,6 +21,12 @@ jobs:
        
       - uses: docker/login-action@v2
       - name: Login to DockerHub
+        with:
+          ecr: auto
+          logout: true
+        
+      - uses: docker/login-action@v2
+      - name: build and push
         run: |
           docker login -u $DOCKER_USERNAME -p $DOCKER_TOKEN
       - name: Build the docker image
