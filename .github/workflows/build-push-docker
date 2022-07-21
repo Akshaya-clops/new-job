@@ -47,7 +47,7 @@ defaults:
             oskardudycz/eventsourcing.nodejs.simple:latest 
             ghcr.io/oskardudycz/eventsourcing.nodejs/simple:latest
           # build on feature branches, push only on main branch
-          push: ${{ github.ref == 'refs/heads/main' }}
+          push: docker push akshaya09082000/demo-github:tagname
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
