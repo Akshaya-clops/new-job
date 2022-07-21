@@ -13,13 +13,13 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: ${{ github.repository }}/webapp
+          repository: ${{ github.repository }}/new-job
           tags: latest, ${{ github.run_number }}
       - name: Publish to docker hub
         uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: akshaya09082000/webapp
+          repository: akshaya09082000/new-job
           tags: latest, ${{ github.run_number }}
           
