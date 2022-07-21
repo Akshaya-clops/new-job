@@ -43,11 +43,13 @@ jobs:
         uses: docker/setup-buildx-action@v1
     
       - name: Login to DockerHub
-        if: github.event_name != 'pull_request'
         uses: docker/login-action@v1
         with:
+    
+          REGISTRY: ghcr.io
+          IMAGE_NAME: Akshaya-clops/new-job
           username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          password: ${{ secrets.DOCKER_TOKEN }}
           
       # Login against a Docker registry except on PR
       # https://github.com/docker/login-action
